@@ -1,0 +1,14 @@
+﻿/* Honors the user's OS-level reduce-motion preference.
+   Loaded from index.html unconditionally; rules only apply when the media query matches. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Pause autoplay videos so the first frame stays visible. */
+  video[autoplay] {
+    animation-play-state: paused;
+  }
+}
